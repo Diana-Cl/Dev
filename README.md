@@ -10,10 +10,12 @@ Markdown is Github's version of dress code - Make your first impression count.
 **Writing on GitHub**
 > [You can structure the information shared on GitHub with various formatting options](https://docs.github.com/en/get-started/writing-on-github).
 >
-> at the end Make sure to checkout [README-Full.md](README-Full.md) for all common page elements.
+> At the end Make sure to checkout [README-Full.md](README-Full.md) for all common page elements.
 
 ## What tricks can I use?
 READMEs offer support for:  
+
+👉 [Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)  
 👉 [Markdown](#markdown-tricks)  
 👉 [HTML](#html-tricks)
 
@@ -262,4 +264,3 @@ Subscript-bold<sub>**min**</sub>
 ## Offical links
 [Github flavoured markdown](https://docs.github.com/en/get-started/writing-on-github)  
 [Github markup engine](https://github.com/github/markup)  
-[Emoji cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/) 
