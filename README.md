@@ -1,7 +1,8 @@
 # Markdown Tricks
 
-A collection of Github markdown tricks for writing kickass READMEs, Pull Requests & Comments.  
-Markdown is Github's version of dress code — Make your first impression count.
+> A collection of Github markdown tricks for writing kickass READMEs, Pull Requests & Comments.
+>
+> Markdown is Github's version of dress code — Make your first impression count.
 
 <br/>
 
@@ -9,7 +10,7 @@ Markdown is Github's version of dress code — Make your first impression count.
 
 > [!NOTE]
 > 
-> [You can structure the information shared on GitHub with various formatting options](https://docs.github.com/en/get-started/writing-on-github).
+> You can structure the information shared on GitHub with [Various formatting options](https://docs.github.com/en/get-started/writing-on-github).
 
 ## Further reading
 
