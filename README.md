@@ -1,7 +1,7 @@
-# Kickass markdown
+# Markdown Tricks
 
 A collection of Github markdown tricks for writing kickass READMEs, Pull Requests & Comments.  
-Markdown is Github's version of dress code - Make your first impression count.
+Markdown is Github's version of dress code — Make your first impression count.
 
 <br/>
 
@@ -14,13 +14,14 @@ Markdown is Github's version of dress code - Make your first impression count.
 ## Further reading
 
 - [Get Start writing on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github)
-- [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 - [About writing and formatting on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github)
+- [Writing Markdown for VitePress like a pro](./vitepress.md)
 - [Working with advanced formatting](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting)
 - [Quickstart for writing on GitHub
 ](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github)
 - [markdown hacks](https://www.markdownguide.org/hacks/)
 - [markdown basic-syntax](https://www.markdownguide.org/basic-syntax/)
+- [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 - [flavoured markdown](https://docs.github.com/en/get-started/writing-on-github/)
 - [markup engine](https://github.com/github/markup/)   
 - [LaTeX Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics/)
@@ -52,13 +53,64 @@ Break line (two spaces at end of line)
 
 > Block quote
 
-Inline code
+`Inline code`
 
-
+```ruby
 Code blocks
 are
 awesome
+```
 
+### Fenced code blocks
+You can create fenced code blocks by placing triple backticks ` ``` ` before and after the code block. We recommend placing a blank line before and after code blocks to make the raw formatting easier to read
+
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
+
+![17529207420455338805955083665782](https://github.com/user-attachments/assets/eb20cacc-6717-483c-bfa7-33324421ec9d)
+
+> [!TIP]
+> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.
+
+To display triple backticks in a fenced code block, wrap them inside quadruple backticks.
+
+````
+```
+Look! You can see my backticks.
+```
+````
+
+![17529207852775658650500526491444](https://github.com/user-attachments/assets/99257525-0958-457f-958e-34a26d12efad)
+
+If you are frequently editing code snippets and tables, you may benefit from enabling a fixed-width font in all comment fields on GitHub. For more information, see [About writing and formatting on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github#enabling-fixed-width-fonts-in-the-editor).
+
+### Syntax highlighting
+You can add an optional language identifier to enable syntax highlighting in your fenced code block.
+
+Syntax highlighting changes the color and style of source code to make it easier to read.
+
+For example, to syntax highlight Ruby code:
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+This will display the code block with syntax highlighting:
+
+![17529209483142227188821319512636](https://github.com/user-attachments/assets/e58d2ee7-25a7-4763-bd6d-a0661856317b)
+
+> [!TIP]
+> 
+> When you create a fenced code block that you also want to have syntax highlighting on a GitHub Pages site, use lower-case language identifiers. For more information, see [About GitHub Pages and Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#syntax-highlighting).
+
+We use [Linguist](https://github.com/github-linguist/linguist) to perform language detection and to select [third-party grammars](https://github.com/github-linguist/linguist/blob/main/vendor/README.md) for syntax highlighting. You can find out which keywords are valid in the [languages YAML](https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml) file.
+
+
+<br/> 
 
 <!-- --------------- -->
  
@@ -108,14 +160,16 @@ awesome
 
 <hr/><br/>
 
-## Charts / Graphs / Diagrams 
-> (mermaidjs)
+## Creating Mermaid diagrams
+Mermaid is a Markdown-inspired tool that renders text into diagrams. For example, Mermaid can render flow charts, sequence diagrams, pie charts and more. For more information, see the [Mermaid documentation.](https://mermaid-js.github.io/mermaid/#/)
 
-Pie, flow, sequence, class, state, ER  
-See also: [mermaidjs live editor](https://mermaid-js.github.io/mermaid-live-editor/).
+To create a Mermaid diagram, add Mermaid syntax inside a fenced code block with the mermaid language identifier. For more information about creating code blocks, see Creating and [highlighting code blocks](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks).
 
-you write something like this:
+For example, you can create a flow chart by specifying values and arrows.
+
 ```
+Here is a simple flow chart:
+
 mermaid
 graph LR
     A[Square Rect] -- Link text --> B((Circle))
@@ -124,7 +178,7 @@ graph LR
     C --> D
 ```
 
-and rendered: 
+Here are the rendered alerts: 
 
 ```mermaid
 graph LR
@@ -133,8 +187,69 @@ graph LR
     B --> D{Rhombus}
     C --> D
 ```
-    
-<hr/><br/>
+
+> [!NOTE]
+> 
+> You may observe errors if you run a third-party Mermaid plugin when using Mermaid syntax on GitHub.
+
+Checking your version of Mermaid
+To ensure GitHub supports your Mermaid syntax, check the Mermaid version currently in use.
+
+![1000165609](https://github.com/user-attachments/assets/e1372c6b-5586-4c35-bc16-281949aa7e87)
+
+
+```mermaid
+  info
+```
+
+<br/>
+
+## Creating a collapsed section
+
+<br/> 
+
+<details>
+<summary>Tips for collapsed sections</summary>
+ 
+You can temporarily obscure sections of your Markdown by creating a collapsed section that the reader can choose to expand. For example, when you want to include technical details in an issue comment that may not be relevant or interesting to every reader, you can put those details in a collapsed section.
+</details>
+
+<br/> 
+
+Any Markdown within the `<details>` block will be collapsed until the reader clicks  to expand the details.
+
+Within the `<details>` block, use the `<summary>` tag to let readers know what is inside. The label appears to the right of: 
+
+```
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+### You can add a header
+
+You can add text within a collapsed section.
+
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+
+</details>
+```
+
+The Markdown inside the `<summary>` label will be collapsed by default:
+
+![17529200135867621709977743736924](https://github.com/user-attachments/assets/11ed65e7-e090-4c2d-9859-e56d90b9302a)
+
+After a reader clicks, the details are expanded:
+
+![1752920053243518053502905470686](https://github.com/user-attachments/assets/f12b54a9-8206-485a-91c0-7c71fc38e0a3)
+
+Optionally, to make the section display as open by default, add the `open` attribute to the `<details>` tag:
+
+`<details open>`
+
+<br><br/> 
 
 ## Links
 
@@ -148,7 +263,7 @@ This site was built using [GitHub Pages](https://pages.github.com/).
 
 [File in same folder as the document.](markor-markdown-reference.md) Use %20 for spaces!
 
-<br><br/> 
+<hr/><br>
 
 ### Section links
 
@@ -157,7 +272,6 @@ You can link directly to any section that has a heading. To view the automatical
 Screenshot of a README for a repository. To the left of a section heading, a link icon is outlined in dark orange.
 
 ![17529155255624854609838089782027](https://github.com/user-attachments/assets/3d107822-4b8d-4dbc-af3c-c5bebc138173)
-
 
 If you need to determine the anchor for a heading in a file you are editing, you can use the following basic rules:
 
@@ -197,6 +311,8 @@ Link to the first non-unique section: [Link Text](#this-heading-is-not-unique-in
 Link to the second non-unique section: [Link Text](#this-heading-is-not-unique-in-the-file-1).
 ```
 
+<br/> 
+
 > [!NOTE]
 >
 > If you edit a heading, or if you change the order of headings with "identical" anchors, you will also need to update any links to those headings as the anchors will change.
@@ -224,7 +340,9 @@ Relative links are easier for users who clone your repository. Absolute links ma
 
 
 ### Custom anchors
+
 > [!NOTE]
+> 
 > Custom anchors will not be included in the document outline/Table of Contents.
 
 You can link to a custom anchor using the value of the `name` attribute you gave the anchor. The syntax is exactly the same as when you link to an anchor that is automatically generated for a heading.
@@ -287,7 +405,7 @@ This example
 Will have a blank line separating both lines
 ```
 
-<hr/><br/> 
+<br/> 
 
 ## Admonition Extension
 
@@ -381,7 +499,7 @@ Typing `:` will bring up a list of suggested emoji. The list will filter as you 
 
 For a full list of available emoji and codes, see the [Emoji-Cheat-Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md).
 
-<br/><br/> 
+<br/> 
 
 <!-- --------------- -->
 
@@ -410,7 +528,7 @@ To add an alert, use a special blockquote line specifying the alert type, follow
 > Advises about risks or negative outcomes of certain actions.
 ```
 
-and they're renders like: 
+**Here are the rendered alerts:**
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
@@ -428,7 +546,7 @@ and they're renders like:
 > Advises about risks or negative outcomes of certain actions.
 Here are the rendered alerts:
 
-<hr/><br/> 
+<br/> 
 
 ## Tables
 
@@ -693,25 +811,6 @@ required for Markdown support OR markdown='1')
 <div markdown='1' style='text-align: justify; text-justify: inter-word;'>
 lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
 </div>
-
-<hr/><br/> 
-
-### Dropdown
-
-<details markdown='1'><summary>Click to Expand/Collapse</summary>
-
-
-```
-<details>
-<summary>Click to Expand/Collapse</summary>
-
-Expanded content. Shows up and keeps visible when clicking expand. Hide again by clicking the dropdown button again.
-
-</details>
-```
-So easy 🤣 
-
-</details>
 
 <hr/><br/> 
 
