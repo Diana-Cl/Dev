@@ -34,29 +34,161 @@
 # Markdown Reference
 Automatically generate _table of contents_ by checking the option here: Settings > Format > Markdown.
 
+**Example:**
+
+<pre><code>
+## H2 Header
+### H3 header
+#### H4 Header
+##### H5 Header
+###### H6 Header
+</code></pre>
+
+**Output:**
+
 ## H2 Header
 ### H3 header
 #### H4 Header
 ##### H5 Header
 ###### H6 Header
 
+---
+
 <!-- --------------- -->
 
 ## Format Text
 
-*Italic emphasis* , _Alternative italic emphasis_
+**Example:**
 
-**Bold emphasis** , __Alternative bold emphasis__
+<pre><code>
+*Italic emphasis*   
+_Alternative italic emphasis_
+</code></pre>
+
+**Output:**
+
+*Italic emphasis*   
+_Alternative italic emphasis_
+
+**Example:**
+
+<pre><code>
+**Bold emphasis**   
+__Alternative bold emphasis__
+</code></pre>
+
+**Output:**
+
+**Bold emphasis**  
+__Alternative bold emphasis__
+
+
+**Example:**
+
+<pre><code>~~Strikethrough~~</code></pre>
+
+**Output:**
 
 ~~Strikethrough~~
 
 Break line (two spaces at end of line)  
 
-> Block quote
+**Example:**
+
+<pre><code>> Block quote</code></pre>
+
+**Output:**
 
 `Inline code`
 
-```ruby
+
+**Example:**
+
+```
+> <b>Bold text</b>
+>  
+> <strong>Strong text</strong>
+> 
+> <i>Italic Text</i>
+> 
+> <em>This text is emphasized</em>
+> 
+> <u>Underline Text</u>
+>
+> <pre>Pre-formatted Text</pre>
+> 
+> <code>Source code</code>
+> 
+> <del>Deleted text</del>
+> 
+> <mark>Highlighted text (HTML5)</mark>
+> 
+> <ins>Inserted text</ins>
+> 
+> <sup>Makes text superscripted</sup>
+>
+> <sub>Makes text subscripted</sub>
+> 
+> <small>Makes text smaller</small>
+> 
+> <kbd>Ctrl</kbd>
+>
+> <blockquote>Text Block Quote</blockquote>
+```
+
+<br/> 
+
+**Output:**
+
+> <b>Bold text</b>
+>  
+> <strong>Strong text</strong>
+> 
+> <i>Italic Text</i>
+> 
+> <em>This text is emphasized</em>
+> 
+> <u>Underline Text</u>
+>
+> <pre>Pre-formatted Text</pre>
+> 
+> <code>Source code</code>
+> 
+> <del>Deleted text</del>
+> 
+> <mark>Highlighted text (HTML5)</mark>
+> 
+> <ins>Inserted text</ins>
+> 
+> <sup>Makes text superscripted</sup>
+>
+> <sub>Makes text subscripted</sub>
+> 
+> <small>Makes text smaller</small>
+> 
+> <kbd>Ctrl</kbd>
+>
+> <blockquote>Text Block Quote</blockquote>
+
+<br/> 
+
+
+**code block**
+
+**Example:**
+
+````
+```
+Code blocks
+are
+awesome
+```
+````
+
+
+**Output:**
+
+```
 Code blocks
 are
 awesome
@@ -65,15 +197,19 @@ awesome
 ### Fenced code blocks
 You can create fenced code blocks by placing triple backticks ` ``` ` before and after the code block. We recommend placing a blank line before and after code blocks to make the raw formatting easier to read
 
+````
 ```
 function test() {
   console.log("notice the blank line before this function?");
 }
 ```
+````
 
-![17529207420455338805955083665782](https://github.com/user-attachments/assets/eb20cacc-6717-483c-bfa7-33324421ec9d)
+
+![175282](https://github.com/user-attachments/assets/eb20cacc-6717-483c-bfa7-33324421ec9d)
 
 > [!TIP]
+> 
 > To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.
 
 To display triple backticks in a fenced code block, wrap them inside quadruple backticks.
@@ -84,7 +220,7 @@ Look! You can see my backticks.
 ```
 ````
 
-![17529207852775658650500526491444](https://github.com/user-attachments/assets/99257525-0958-457f-958e-34a26d12efad)
+![17529](https://github.com/user-attachments/assets/99257525-0958-457f-958e-34a26d12efad)
 
 If you are frequently editing code snippets and tables, you may benefit from enabling a fixed-width font in all comment fields on GitHub. For more information, see [About writing and formatting on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github#enabling-fixed-width-fonts-in-the-editor).
 
@@ -95,14 +231,17 @@ Syntax highlighting changes the color and style of source code to make it easier
 
 For example, to syntax highlight Ruby code:
 
+````
 ```ruby
 require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
+````
+
 This will display the code block with syntax highlighting:
 
-![17529209483142227188821319512636](https://github.com/user-attachments/assets/e58d2ee7-25a7-4763-bd6d-a0661856317b)
+![1752926](https://github.com/user-attachments/assets/e58d2ee7-25a7-4763-bd6d-a0661856317b)
 
 > [!TIP]
 > 
@@ -118,18 +257,77 @@ We use [Linguist](https://github.com/github-linguist/linguist) to perform langua
 ## Lists
 ### Ordered & unordered
 
+**Example:**
+
+<pre><code>
 * Unordered list
 * ...with asterisk/star
 * Test
+</code></pre>
+
+**Output:**
+
+* Unordered list
+* ...with asterisk/star
+* Test
+
+
+**Example:**
+  
+<pre><code>
+- Another unordered list
+- ...with hyphen/minus
+- Test
+</code></pre>
+
+**Output:**
 
 - Another unordered list
 - ...with hyphen/minus
 - Test
 
+
+**Example:**
+
+<pre><code>
 1. Ordered list
 2. Test
 3. Test
 4. Test
+</code></pre>
+
+**Output:**
+
+1. Ordered list
+2. Test
+3. Test
+4. Test
+
+
+**Example:**
+
+<pre><code>
+- Nested lists
+    * Unordered nested list
+    * Test
+    * Test
+    * Test
+- Ordered nested list
+    1. Test
+    2. Test
+    3. Test
+    4. Test
+- Double-nested unordered list
+    - Test
+    - Unordered
+        - Test a
+        - Test b
+    - Ordered
+        1. Test 1
+        2. Test 2
+</code></pre>
+
+**Output:**
 
 - Nested lists
     * Unordered nested list
@@ -150,12 +348,27 @@ We use [Linguist](https://github.com/github-linguist/linguist) to perform langua
         1. Test 1
         2. Test 2
 
+
 ### Checklist
+
+**Example:**
+  
+<pre><code>
 * [ ] Salad
 * [x] Potatoes
 
 1. [x] Clean
 2. [ ] Cook
+</code></pre>
+
+**Output:**
+
+* [ ] Salad
+* [x] Potatoes
+
+1. [x] Clean
+2. [ ] Cook
+
 
 <!-- --------------- -->
 
@@ -168,7 +381,7 @@ To create a Mermaid diagram, add Mermaid syntax inside a fenced code block with 
 
 For example, you can create a flow chart by specifying values and arrows.
 
-```
+<pre><code>
 Here is a simple flow chart:
 
 mermaid
@@ -177,7 +390,8 @@ graph LR
     A --> C(Round Rect)
     B --> D{Rhombus}
     C --> D
-```
+</code></pre>
+
 
 Here are the rendered alerts: 
 
@@ -189,15 +403,28 @@ graph LR
     C --> D
 ```
 
+<br/> 
+
 > [!NOTE]
 > 
 > You may observe errors if you run a third-party Mermaid plugin when using Mermaid syntax on GitHub.
+
 
 Checking your version of Mermaid
 To ensure GitHub supports your Mermaid syntax, check the Mermaid version currently in use.
 
 ![1000165609](https://github.com/user-attachments/assets/e1372c6b-5586-4c35-bc16-281949aa7e87)
 
+
+**Example:**
+
+<pre><code>
+```mermaid
+  info
+```
+</code></pre>
+
+**Output:**
 
 ```mermaid
   info
@@ -221,7 +448,7 @@ Any Markdown within the `<details>` block will be collapsed until the reader cli
 
 Within the `<details>` block, use the `<summary>` tag to let readers know what is inside. The label appears to the right of: 
 
-```
+<pre><code>
 <details>
 
 <summary>Tips for collapsed sections</summary>
@@ -236,15 +463,15 @@ You can add an image or a code block, too.
    puts "Hello World"
 
 </details>
-```
+</code></pre>
 
 The Markdown inside the `<summary>` label will be collapsed by default:
 
-![17529200135867621709977743736924](https://github.com/user-attachments/assets/11ed65e7-e090-4c2d-9859-e56d90b9302a)
+![17096924](https://github.com/user-attachments/assets/11ed65e7-e090-4c2d-9859-e56d90b9302a)
 
 After a reader clicks, the details are expanded:
 
-![1752920053243518053502905470686](https://github.com/user-attachments/assets/f12b54a9-8206-485a-91c0-7c71fc38e0a3)
+![70686](https://github.com/user-attachments/assets/f12b54a9-8206-485a-91c0-7c71fc38e0a3)
 
 Optionally, to make the section display as open by default, add the `open` attribute to the `<details>` tag:
 
@@ -272,7 +499,7 @@ You can link directly to any section that has a heading. To view the automatical
 
 Screenshot of a README for a repository. To the left of a section heading, a link icon is outlined in dark orange.
 
-![17529155255624854609838089782027](https://github.com/user-attachments/assets/3d107822-4b8d-4dbc-af3c-c5bebc138173)
+![1757](https://github.com/user-attachments/assets/3d107822-4b8d-4dbc-af3c-c5bebc138173)
 
 If you need to determine the anchor for a heading in a file you are editing, you can use the following basic rules:
 
